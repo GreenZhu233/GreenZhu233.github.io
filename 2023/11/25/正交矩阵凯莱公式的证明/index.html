@@ -19,7 +19,7 @@
 
 <!--Open Graph Title-->
 
-    <meta property="og:title" content="blabla"/>
+    <meta property="og:title" content="正交矩阵凯莱公式的证明"/>
 
 
 <!--Open Graph Description-->
@@ -51,7 +51,7 @@
 
 <!-- Title -->
 
-<title>blabla | GreenBlog</title>
+<title>正交矩阵凯莱公式的证明 | GreenBlog</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
@@ -120,7 +120,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
                 <div class="post-heading text-white">
-                    <h1>blabla</h1>
+                    <h1>正交矩阵凯莱公式的证明</h1>
                     
                 </div>
             </div>
@@ -148,7 +148,7 @@
     
         <span class="post-meta-split">&nbsp;|&nbsp;</span>
         <i class="far fa-file-word fa-fw"></i>
-        19
+        436
     
 
     
@@ -156,30 +156,39 @@
     
 </span>  
                 
-                <h2 id="Hi-You-Guys"><a href="#Hi-You-Guys" class="headerlink" title="Hi You Guys"></a>Hi You Guys</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;hello world&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <p>#正交矩阵凯莱公式的证明</p>
+<p>####正交矩阵的凯莱公式表述如下：</p>
+<blockquote>
+<p>设 $R$ 是n维线性空间的方阵，若 $R$ 是不以 $-1$ 为特征值的正交矩阵，则存在反对称矩阵 $S$ ，使得<br>$$ R &#x3D; (I-S)^{-1}(I+S) $$</p>
+</blockquote>
+<p>####证明思路：</p>
+<p>不妨从凯莱公式中反解<strong>S</strong>：<br>$$<br>\begin{align*}<br>R &amp;&#x3D; (I-S)^{-1}(I+S) \<br>(I-S)R &amp;&#x3D; I+S \<br>R-SR &amp;&#x3D; I+S \<br>R-I &amp;&#x3D; S(R+I) \<br>S &amp;&#x3D; (R-I)(R+I)^{-1}<br>\end{align*}<br>$$</p>
+<p>因此，想要根据 $S&#x3D;(R-I)(R+I)^{-1}$ 构造出 $S$，从而证明凯莱公式，只需证明以下三点：</p>
+<ol>
+<li>$R+I$ 是可逆矩阵</li>
+<li>$S$ 是反对称矩阵</li>
+<li>$I-S$ 是可逆矩阵</li>
+</ol>
+<p>####证明过程：</p>
+<ul>
+<li><p>若 $-1$ 不是 $R$ 的特征值，则 $-1$ 不是特征多项式 $det(R- \lambda I)&#x3D;0$ 的根，即 $det(R+I) \neq 0$ ，所以 $R+I$ 是可逆矩阵。</p>
+</li>
+<li><p>已知 $S&#x3D;(R-I)(R+I)^{-1}$ ，则<br>$$<br>\begin{align*}<br>S^T &amp;&#x3D; ((R+I)^{-1})^T(R-I)^T \<br>  &amp;&#x3D; ((R+I)^T)^{-1}(R^T-I) \<br>  &amp;&#x3D; (R^T+I)^{-1}(R^T-I)<br>\end{align*}<br>$$<br>由于<br>$$<br>(R^T+I)(R-I)&#x3D;R-R^T \<br>(R^T-I)(R+I)&#x3D;R^T-R<br>$$<br>所以<br>$$<br>\begin{align*}<br>S+S^T &amp;&#x3D; (R-I)(R+I)^{-1}+(R^T+I)^{-1}(R^T-I)\<br>  &amp;&#x3D; (R^T+I)^{-1}<a href="R+I">(R^T+I)(R-I)+(R^T-I)(R+I)</a>^{-1} \<br>  &amp;&#x3D; (R^T+I)^{-1}<a href="R+I">(R-R^T)+(R^T-R)</a>^{-1} \<br>  &amp;&#x3D; 0<br>\end{align*}<br>$$<br>由此我们证明了 $S$ 是反对称矩阵。</p>
+</li>
+<li><p>设 $x$ 是一个n维向量，满足 $(I-S)x&#x3D;0$ ，则有<br>$$<br>\begin{align*}<br>Sx &amp;&#x3D; x \<br>x^TS^T &amp;&#x3D; x^T \<br>x^TS^Tx &amp;&#x3D; x^Tx \<br>-x^TSx &amp;&#x3D; x^Tx \<br>-x^Tx &amp;&#x3D; x^Tx \<br>x^Tx &amp;&#x3D; 0<br>\end{align*}<br>$$<br>当且仅当 $x&#x3D;0$ 时满足上式。<br>因此 $I-S$ 是可逆矩阵。  </p>
+<span class="badge badge-success">证毕！</span></li>
+</ul>
+
             </div>
 
             <!-- Post information -->
             
-    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
-        
-            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
-            tags:&nbsp;
-            
-            
-        
-            <a href="/tags/233/">#233</a>
-        
-    </div>
-
             
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
         <ul class="pagination d-block text-center">
             
-                <li class="previous page-item d-inline"><a href="/2023/11/25/%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5%E5%87%AF%E8%8E%B1%E5%85%AC%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E/" class="page-link float-left">&larr;  下一页</a></li>
             
-            
-                <li class="next page-item d-inline"><a href="/2023/11/25/hello-world/" class="page-link float-right">上一页  &rarr;</a></li>
+                <li class="next page-item d-inline"><a href="/2023/11/25/blabla/" class="page-link float-right">上一页  &rarr;</a></li>
             
         </ul>
     </div>
@@ -239,6 +248,13 @@
         });
     </script>
 
+
+    <script src="//cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+        MathJax.Hub.Config({
+            tex2jax:{inlineMath:[['$', '$']]}
+        })
+    </script>
 
     
 
