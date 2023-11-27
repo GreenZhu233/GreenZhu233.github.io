@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>对正交矩阵凯莱公式的讨论</title>
+      <link href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/"/>
+      <url>/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/</url>
+      
+        <content type="html"><![CDATA[<h1 id="首先是证明"><a href="#首先是证明" class="headerlink" title="首先是证明"></a>首先是证明</h1><h4 id="正交矩阵的凯莱公式表述"><a href="#正交矩阵的凯莱公式表述" class="headerlink" title="正交矩阵的凯莱公式表述"></a>正交矩阵的凯莱公式表述</h4><blockquote><p>设 $R$ 是n维线性空间的方阵，若 $R$ 是不以 $-1$ 为特征值的正交矩阵，则存在反对称矩阵 $S$ ，使得<br>$$ R &#x3D; (I-S)^{-1}(I+S) $$</p></blockquote><h4 id="证明思路"><a href="#证明思路" class="headerlink" title="证明思路"></a>证明思路</h4><p>不妨从凯莱公式中反解<strong>S</strong>：</p><p>$$<br>\begin{align*}<br>R &amp;&#x3D; (I-S)^{-1}(I+S) \\<br>(I-S)R &amp;&#x3D; I+S \\<br>R-SR &amp;&#x3D; I+S \\<br>R-I &amp;&#x3D; S(R+I) \\<br>S &amp;&#x3D; (R-I)(R+I)^{-1}<br>\end{align*}<br>$$</p><p>因此，想要根据 $S&#x3D;(R-I)(R+I)^{-1}$ 构造出 $S$，从而证明凯莱公式，只需证明以下三点：</p><ol><li>$R+I$ 是可逆矩阵</li><li>$S$ 是反对称矩阵</li><li>$I-S$ 是可逆矩阵</li></ol><h4 id="证明过程"><a href="#证明过程" class="headerlink" title="证明过程"></a>证明过程</h4><ul><li><p>若 $-1$ 不是 $R$ 的特征值，则 $-1$ 不是特征多项式 $det(R- \lambda I)&#x3D;0$ 的根，即 $det(R+I) \neq 0$ ，所以 $R+I$ 是可逆矩阵。</p></li><li><p>已知 $S&#x3D;(R-I)(R+I)^{-1}$ ，则</p></li></ul><p>$$<br>\begin{align*}<br>S^T &amp;&#x3D; ((R+I)^{-1})^T(R-I)^T \\<br>    &amp;&#x3D; ((R+I)^T)^{-1}(R^T-I) \\<br>    &amp;&#x3D; (R^T+I)^{-1}(R^T-I)<br>\end{align*}<br>$$</p><p>由于</p><p>$$<br>(R^T+I)(R-I)&#x3D;R-R^T \\<br>(R^T-I)(R+I)&#x3D;R^T-R<br>$$</p><p>所以</p><p>$$<br>\begin{align*}<br>S+S^T &amp;&#x3D; (R-I)(R+I)^{-1}+(R^T+I)^{-1}(R^T-I) \\<br>    &amp;&#x3D; (R^T+I)^{-1} \left[ (R^T+I)(R-I)+(R^T-I)(R+I) \right] (R+I)^{-1} \\<br>    &amp;&#x3D; (R^T+I)^{-1} \left[ (R-R^T)+(R^T-R) \right] (R+I)^{-1} \\<br>    &amp;&#x3D; 0<br>\end{align*}<br>$$</p><p>由此我们证明了 $S$ 是反对称矩阵。</p><ul><li>设 $x$ 是一个n维向量，满足 $(I-S)x&#x3D;0$ ，则有</li></ul><p>$$<br>\begin{align*}<br>Sx &amp;&#x3D; x \\<br>x^TS^T &amp;&#x3D; x^T \\<br>x^TS^Tx &amp;&#x3D; x^Tx \\<br>-x^TSx &amp;&#x3D; x^Tx \\<br>-x^Tx &amp;&#x3D; x^Tx \\<br>x^Tx &amp;&#x3D; 0<br>\end{align*}<br>$$</p><p>当且仅当 $x&#x3D;0$ 时满足上式。<br>因此 $I-S$ 是可逆矩阵。  </p><h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
