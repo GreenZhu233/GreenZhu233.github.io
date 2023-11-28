@@ -725,7 +725,7 @@
 <p>$$<br>\begin{align*}<br>Sx &amp;&#x3D; x \\<br>x^TS^T &amp;&#x3D; x^T \\<br>x^TS^Tx &amp;&#x3D; x^Tx \\<br>-x^TSx &amp;&#x3D; x^Tx \\<br>-x^Tx &amp;&#x3D; x^Tx \\<br>x^Tx &amp;&#x3D; 0<br>\end{align*}<br>$$</p>
 <p>当且仅当 $x&#x3D;0$ 时满足上式。<br>因此 $I-S$ 是可逆矩阵。  </p>
 <ul>
-<li>总结一下，任意给一个不以 $-1$ 为特征值的方阵 $R$ ，我们都能找到反对称矩阵 $S$ ，使得 $ R &#x3D; (I-S)^{-1}(I+S) $ ，因此凯莱公式成立。</li>
+<li>总结一下，任意给一个不以 $-1$ 为特征值的方阵 $R$ ，我们都能找到反对称矩阵 $S&#x3D;(R-I)(R+I)^{-1}$ ，使得 $ R &#x3D; (I-S)^{-1}(I+S) $ ，因此凯莱公式成立。</li>
 </ul>
 <hr>
 <h4 id="进一步讨论"><a href="#进一步讨论" class="headerlink" title="进一步讨论"></a>进一步讨论</h4><p>如果 $R$ 是一个 $3×3$ 的矩阵，那么公式中的 $S$ 是一个 $3×3$ 的反对称矩阵，可以写成如下形式：</p>
@@ -742,7 +742,7 @@
 <p>于是 $\sin\theta&#x3D;\frac{2k}{1+k^2}$， $\cos\theta&#x3D;\frac{1-k^2}{1+k^2}$  </p>
 <p>将 $\vec{s}$ 归一化，令 $\vec{t}&#x3D;\frac{\vec{s}}{k}$ ，$t_i&#x3D;\frac{s_i}{k}(i&#x3D;1,2,3)$ ，于是我们可以用 $t_i$ 和 $\theta$ 来表示 $R$ ：</p>
 <p>$$<br>R&#x3D;\begin{bmatrix}<br>t_1^2(1-\cos\theta)+\cos\theta &amp;t_1t_2(1-\cos\theta)-t_3\sin\theta &amp;t_1t_3(1-\cos\theta)+t_2\sin\theta \\<br>t_1t_2(1-\cos\theta)+t_3\sin\theta &amp;t_2^2(1-\cos\theta)+\cos\theta &amp;t_2t_3(1-\cos\theta)-t_1\sin\theta \\<br>t_1t_3(1-\cos\theta)-t_2\sin\theta &amp;t_2t_3(1-\cos\theta)+t_1\sin\theta &amp;t_3^2(1-\cos\theta)+\cos\theta<br>\end{bmatrix}<br>$$</p>
-<p>如果你对这样的矩阵形式熟悉的话，你会发现这恰好是绕单位向量 $\vec{t}$ 旋转 $\theta$ 角度对应的旋转矩阵。而 $\vec{t}$ 的方向与 $\vec{s}$ 相同，$\theta$ 的大小与 $\vec{s}$ 的模正相关， $\vec{s}$ 又和 $S$ 一一对应。由此我们也可以发现，在三维空间下，任意一个正交矩阵 $R$ ，如果 $-1$ 不是它的特征值，它就是一个纯粹的旋转矩阵，没有镜像的效果，那么它一定有一个确定的旋转轴和旋转角度，因此能够找到唯一的一个反对称阵 $S$ 与之对应，即凯莱公式成立。</p>
+<p>如果你对这样的矩阵形式熟悉的话，你会发现这恰好是绕单位向量 $\vec{t}$ 旋转 $\theta$ 角度对应的旋转矩阵。而 $\vec{t}$ 的方向与 $\vec{s}$ 相同，$\theta$ 的大小与 $\vec{s}$ 的模正相关， $\vec{s}$ 又和 $S$ 一一对应。由此我们也可以发现，在三维空间下，任意一个正交矩阵 $R$ ，如果 $-1$ 不是它的特征值，它就是一个纯粹的旋转矩阵，没有镜像的效果，那么它一定有一个确定的旋转轴和旋转角度，因此能够找到唯一的一个反对称阵 $S$ 与之对应。</p>
 
       </div>
       <div class="post-tags-categories">
