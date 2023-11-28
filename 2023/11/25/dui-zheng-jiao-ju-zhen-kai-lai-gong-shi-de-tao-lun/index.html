@@ -557,15 +557,24 @@
       
 
       
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E6%95%B0%E7%90%86/" class="post-detail-header_category">
+              数理
+            </a>
+          
+        </span>
+      
 
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 438 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.1k |
           </span>
   
           <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 2分钟 |
+            <i class="fas fa-clock"></i> 阅读时长: 5分钟 |
           </span>
   
           
@@ -592,9 +601,10 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1 id="首先是证明"><a href="#首先是证明" class="headerlink" title="首先是证明"></a>首先是证明</h1><h4 id="正交矩阵的凯莱公式表述"><a href="#正交矩阵的凯莱公式表述" class="headerlink" title="正交矩阵的凯莱公式表述"></a>正交矩阵的凯莱公式表述</h4><blockquote>
+        <h1 id="正交矩阵的凯莱公式表述"><a href="#正交矩阵的凯莱公式表述" class="headerlink" title="正交矩阵的凯莱公式表述"></a>正交矩阵的凯莱公式表述</h1><blockquote>
 <p>设 $R$ 是n维线性空间的方阵，若 $R$ 是不以 $-1$ 为特征值的正交矩阵，则存在反对称矩阵 $S$ ，使得<br>$$ R &#x3D; (I-S)^{-1}(I+S) $$</p>
 </blockquote>
+<hr>
 <h4 id="证明思路"><a href="#证明思路" class="headerlink" title="证明思路"></a>证明思路</h4><p>不妨从凯莱公式中反解<strong>S</strong>：</p>
 <p>$$<br>\begin{align*}<br>R &amp;&#x3D; (I-S)^{-1}(I+S) \\<br>(I-S)R &amp;&#x3D; I+S \\<br>R-SR &amp;&#x3D; I+S \\<br>R-I &amp;&#x3D; S(R+I) \\<br>S &amp;&#x3D; (R-I)(R+I)^{-1}<br>\end{align*}<br>$$</p>
 <p>因此，想要根据 $S&#x3D;(R-I)(R+I)^{-1}$ 构造出 $S$，从而证明凯莱公式，只需证明以下三点：</p>
@@ -603,26 +613,57 @@
 <li>$S$ 是反对称矩阵</li>
 <li>$I-S$ 是可逆矩阵</li>
 </ol>
-<h4 id="证明过程"><a href="#证明过程" class="headerlink" title="证明过程"></a>证明过程</h4><ul>
+<hr>
+<h4 id="证明过程"><a href="#证明过程" class="headerlink" title="证明过程"></a>证明过程</h4><ol>
 <li><p>若 $-1$ 不是 $R$ 的特征值，则 $-1$ 不是特征多项式 $det(R- \lambda I)&#x3D;0$ 的根，即 $det(R+I) \neq 0$ ，所以 $R+I$ 是可逆矩阵。</p>
 </li>
 <li><p>已知 $S&#x3D;(R-I)(R+I)^{-1}$ ，则</p>
+<p> $$<br> \begin{align*}<br> S^T &amp;&#x3D; ((R+I)^{-1})^T(R-I)^T \\<br> &amp;&#x3D; ((R+I)^T)^{-1}(R^T-I) \\<br> &amp;&#x3D; (R^T+I)^{-1}(R^T-I)<br> \end{align*}<br> $$</p>
+<p> 由于</p>
+<p> $$<br> (R^T+I)(R-I)&#x3D;R-R^T \\<br> (R^T-I)(R+I)&#x3D;R^T-R<br> $$</p>
+<p> 所以</p>
+<p> $$<br> \begin{align*}<br> S+S^T &amp;&#x3D; (R-I)(R+I)^{-1}+(R^T+I)^{-1}(R^T-I) \\<br> &amp;&#x3D; (R^T+I)^{-1} \left[ (R^T+I)(R-I)+(R^T-I)(R+I) \right] (R+I)^{-1} \\<br> &amp;&#x3D; (R^T+I)^{-1} \left[ (R-R^T)+(R^T-R) \right] (R+I)^{-1} \\<br> &amp;&#x3D; 0<br> \end{align*}<br> $$</p>
+<p> 由此我们证明了 $S$ 是反对称矩阵。</p>
 </li>
-</ul>
-<p>$$<br>\begin{align*}<br>S^T &amp;&#x3D; ((R+I)^{-1})^T(R-I)^T \\<br>    &amp;&#x3D; ((R+I)^T)^{-1}(R^T-I) \\<br>    &amp;&#x3D; (R^T+I)^{-1}(R^T-I)<br>\end{align*}<br>$$</p>
-<p>由于</p>
-<p>$$<br>(R^T+I)(R-I)&#x3D;R-R^T \\<br>(R^T-I)(R+I)&#x3D;R^T-R<br>$$</p>
-<p>所以</p>
-<p>$$<br>\begin{align*}<br>S+S^T &amp;&#x3D; (R-I)(R+I)^{-1}+(R^T+I)^{-1}(R^T-I) \\<br>    &amp;&#x3D; (R^T+I)^{-1} \left[ (R^T+I)(R-I)+(R^T-I)(R+I) \right] (R+I)^{-1} \\<br>    &amp;&#x3D; (R^T+I)^{-1} \left[ (R-R^T)+(R^T-R) \right] (R+I)^{-1} \\<br>    &amp;&#x3D; 0<br>\end{align*}<br>$$</p>
-<p>由此我们证明了 $S$ 是反对称矩阵。</p>
-<ul>
-<li>设 $x$ 是一个n维向量，满足 $(I-S)x&#x3D;0$ ，则有</li>
-</ul>
+<li><p>设 $x$ 是一个n维向量，满足 $(I-S)x&#x3D;0$ ，则有</p>
+</li>
+</ol>
 <p>$$<br>\begin{align*}<br>Sx &amp;&#x3D; x \\<br>x^TS^T &amp;&#x3D; x^T \\<br>x^TS^Tx &amp;&#x3D; x^Tx \\<br>-x^TSx &amp;&#x3D; x^Tx \\<br>-x^Tx &amp;&#x3D; x^Tx \\<br>x^Tx &amp;&#x3D; 0<br>\end{align*}<br>$$</p>
 <p>当且仅当 $x&#x3D;0$ 时满足上式。<br>因此 $I-S$ 是可逆矩阵。  </p>
-<h1 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h1>
+<ul>
+<li>总结一下，任意给一个不以 $-1$ 为特征值的方阵 $R$ ，我们都能找到反对称矩阵 $S$ ，使得 $ R &#x3D; (I-S)^{-1}(I+S) $ ，因此凯莱公式成立。</li>
+</ul>
+<hr>
+<h4 id="进一步讨论"><a href="#进一步讨论" class="headerlink" title="进一步讨论"></a>进一步讨论</h4><p>如果 $R$ 是一个 $3×3$ 的矩阵，那么公式中的 $S$ 是一个 $3×3$ 的反对称矩阵，可以写成如下形式：</p>
+<p>$$<br>S&#x3D;\begin{bmatrix}<br>0  &amp;-s_3  &amp;s_2 \\<br>s_3  &amp;0  &amp;-s_1 \\<br>-s_2  &amp;s_1  &amp;0<br>\end{bmatrix}<br>$$</p>
+<p>或者用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E6%B1%82%E5%92%8C%E7%BA%A6%E5%AE%9A/2477100">爱因斯坦求和约定</a>来表示：</p>
+<p>$$<br>S_{ij} &#x3D; - \epsilon _{ijk}s_k<br>$$</p>
+<p>其中 $\epsilon$ 是 <strong>Levi-Civita</strong> 符号，该符号定义为</p>
+<p>$$<br>\epsilon_{ijk}&#x3D;<br>\begin{cases}<br>1 &amp;\text{i,j,k 是偶排列的} \\<br>-1 &amp;\text{i,j,k 是奇排列的} \\<br>0 &amp;\text{i,j,k 中有重复的} \\<br>\end{cases}<br>$$</p>
+<p>从中可以看出 $S$ 具有三个自由度，所以 $R$ 也具有三个自由度。  </p>
+<p>如果用 $S$ 表示出 $R$，可以得到</p>
+<p>$$<br>R&#x3D; \frac{1}{s_1^2+s_2^2+s_3^2+1}<br>\begin{bmatrix}<br>s_1^2-s_2^2-s_3^2+1 &amp;2s_1s_2-2s_3 &amp;2s_1s_3+2s_2 \\<br>2s_1s_2+2s_3 &amp;-s_1^2+s_2^2-s_3^2+1 &amp;2s_2s_3-2s_1 \\<br>2s_1s_3-2s_2 &amp;2s_2s_3+2s_1 &amp;-s_1^2-s_2^2+s_3^2+1<br>\end{bmatrix}<br>$$</p>
+<p>记向量 $\vec{s}&#x3D;\begin{bmatrix}s_1 \\ s_2 \\ s_3 \end{bmatrix}$ ，$\vec{s}$ 的 $l_2$ 范数为 $k&#x3D;\sqrt{s_1^2+s_2^2+s_3^2}$  </p>
+<p>设存在一个角度 $\theta \in \left[0,\pi \right]$ ，$\tan\frac{\theta}{2}&#x3D;k$，并且当$k \to \infty$ 时 $\theta &#x3D; \pi$  </p>
+<p>于是 $\sin\theta&#x3D;\frac{2k}{1+k^2}$， $\cos\theta&#x3D;\frac{1-k^2}{1+k^2}$  </p>
+<p>将 $\vec{s}$ 归一化，令 $\vec{t}&#x3D;\frac{\vec{s}}{k}$ ，$t_i&#x3D;\frac{s_i}{k}(i&#x3D;1,2,3)$ ，于是我们可以用 $t_i$ 和 $\theta$ 来表示 $R$ ：</p>
+<p>$$<br>R&#x3D;\begin{bmatrix}<br>t_1^2(1-\cos\theta)+\cos\theta &amp;t_1t_2(1-\cos\theta)-t_3\sin\theta &amp;t_1t_3(1-\cos\theta)+t_2\sin\theta \\<br>t_1t_2(1-\cos\theta)+t_3\sin\theta &amp;t_2^2(1-\cos\theta)+\cos\theta &amp;t_2t_3(1-\cos\theta)-t_1\sin\theta \\<br>t_1t_3(1-\cos\theta)-t_2\sin\theta &amp;t_2t_3(1-\cos\theta)+t_1\sin\theta &amp;t_3^2(1-\cos\theta)+\cos\theta<br>\end{bmatrix}<br>$$</p>
+<p>如果你对这样的矩阵形式熟悉的话，你会发现这恰好是绕单位向量 $\vec{t}$ 旋转 $\theta$ 角度对应的旋转矩阵。而 $\vec{t}$ 的方向与 $\vec{s}$ 相同，$\theta$ 的大小与 $\vec{s}$ 的模正相关， $\vec{s}$ 又和 $S$ 一一对应。由此我们也可以发现，在三维空间下，任意一个正交矩阵 $R$ ，如果 $-1$ 不是它的特征值，它就是一个纯粹的旋转矩阵，没有镜像的效果，那么它一定有一个确定的旋转轴和旋转角度，因此能够找到唯一的一个反对称阵 $S$ 与之对应，即凯莱公式成立。</p>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E5%AE%9A%E7%90%86/" class="">
+              定理
+            </a>
+          
+            <a href="/tags/%E8%AF%81%E6%98%8E/" class="">
+              证明
+            </a>
+          
+        </div>
         
       </div>
       
@@ -765,7 +806,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E6%98%AF%E8%AF%81%E6%98%8E"><span class="toc-text">首先是证明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%AF%E8%8E%B1%E5%85%AC%E5%BC%8F%E8%A1%A8%E8%BF%B0"><span class="toc-text">正交矩阵的凯莱公式表述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF"><span class="toc-text">证明思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E8%BF%87%E7%A8%8B"><span class="toc-text">证明过程</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AA%E5%AE%8C%E5%BE%85%E7%BB%AD"><span class="toc-text">未完待续</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%AF%E8%8E%B1%E5%85%AC%E5%BC%8F%E8%A1%A8%E8%BF%B0"><span class="toc-text">正交矩阵的凯莱公式表述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF"><span class="toc-text">证明思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E8%BF%87%E7%A8%8B"><span class="toc-text">证明过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA"><span class="toc-text">进一步讨论</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1749,9 +1790,7 @@
 <!-- 爱心点击 -->
 
   
-    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script src="/js/cursor/explosion.min.js"></script>
+    <script src="/js/cursor/fireworks.js"></script>
   
 
 
