@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> 数理 </category>
+          <category> 数学 </category>
           
       </categories>
       
@@ -23,6 +23,10 @@
             <tag> 定理 </tag>
             
             <tag> 证明 </tag>
+            
+            <tag> 公式 </tag>
+            
+            <tag> 线性代数 </tag>
             
         </tags>
       

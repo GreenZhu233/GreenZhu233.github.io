@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>对正交矩阵凯莱公式的讨论 | GreenBlog</title>
+  <title>分类: 数学 | GreenBlog</title>
 
   <link rel="icon" type="image/png" href="/greenzhu.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -619,558 +619,112 @@
 </header>
         <!-- 内容区域 -->
         
- <!-- prismjs 代码高亮 -->
- 
 
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-categoryDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
-
-
-  <!-- 文章详情页顶部图片和标题 -->
-
-
-
-
-<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('/photos/Caylay.png')">
-  <div class="post-detail-header-mask"></div>
-  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
-  
-  <div class="post-detail-header_info-box">
-    <div class="title-box">
-      <span class="title">
-        对正交矩阵凯莱公式的讨论
-      </span>
-    </div>
-    
-    
-      
-        <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2023-11-25 |
-        </span>
-      
-
-      
-        <span class="post-detail-header_categories">
-          <i class="iconfont iconbookmark1"></i> 分类：
-          
-            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-detail-header_category">
-              数学
-            </a>
-          
-        </span>
-      
-
-      
-        <div class="post-detail-header_wordcount">
-          <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 1.1k |
-          </span>
-  
-          <span class="min2read">
-            <i class="fas fa-clock"></i> 阅读时长: 5分钟 |
-          </span>
-  
-          
-            <span class="reading">
-              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
-            </span>
-          
-        </div>
-      
-    
+<div class="category-header"  style="background-image:url('https://pic3.zhimg.com/80/v2-98dcd81cb0d1fee52a807c13cedb8338_1440w.jpg?source=1940ef5c')">
+  <div class="category-header-title">
+    category
   </div>
-  
-  
-    <script src="/js/bubble/bubble.js"></script>
-  
-</div>
-
-
-
-
-
-<div class="post-detail-content post-row" 
-  style="padding-top: 0px;">
-  <div class="main-content">
-    <article class="post post-detail">
-      <div class="post-content">
-        <h1 id="正交矩阵的凯莱公式表述"><a href="#正交矩阵的凯莱公式表述" class="headerlink" title="正交矩阵的凯莱公式表述"></a>正交矩阵的凯莱公式表述</h1><blockquote>
-<p>设 $R$ 是n维线性空间的方阵，若 $R$ 是不以 $-1$ 为特征值的正交矩阵，则存在反对称矩阵 $S$ ，使得<br>$$ R &#x3D; (I-S)^{-1}(I+S) $$</p>
-</blockquote>
-<hr>
-<h4 id="证明思路"><a href="#证明思路" class="headerlink" title="证明思路"></a>证明思路</h4><p>不妨从凯莱公式中反解<strong>S</strong>：</p>
-<p>$$<br>\begin{align*}<br>R &amp;&#x3D; (I-S)^{-1}(I+S) \\<br>(I-S)R &amp;&#x3D; I+S \\<br>R-SR &amp;&#x3D; I+S \\<br>R-I &amp;&#x3D; S(R+I) \\<br>S &amp;&#x3D; (R-I)(R+I)^{-1}<br>\end{align*}<br>$$</p>
-<p>因此，想要根据 $S&#x3D;(R-I)(R+I)^{-1}$ 构造出 $S$，从而证明凯莱公式，只需证明以下三点：</p>
-<ol>
-<li>$R+I$ 是可逆矩阵</li>
-<li>$S$ 是反对称矩阵</li>
-<li>$I-S$ 是可逆矩阵</li>
-</ol>
-<hr>
-<h4 id="证明过程"><a href="#证明过程" class="headerlink" title="证明过程"></a>证明过程</h4><ol>
-<li><p>若 $-1$ 不是 $R$ 的特征值，则 $-1$ 不是特征多项式 $det(R- \lambda I)&#x3D;0$ 的根，即 $det(R+I) \neq 0$ ，所以 $R+I$ 是可逆矩阵。</p>
-</li>
-<li><p>已知 $S&#x3D;(R-I)(R+I)^{-1}$ ，则</p>
-<p> $$<br> \begin{align*}<br> S^T &amp;&#x3D; ((R+I)^{-1})^T(R-I)^T \\<br> &amp;&#x3D; ((R+I)^T)^{-1}(R^T-I) \\<br> &amp;&#x3D; (R^T+I)^{-1}(R^T-I)<br> \end{align*}<br> $$</p>
-<p> 由于</p>
-<p> $$<br> (R^T+I)(R-I)&#x3D;R-R^T \\<br> (R^T-I)(R+I)&#x3D;R^T-R<br> $$</p>
-<p> 所以</p>
-<p> $$<br> \begin{align*}<br> S+S^T &amp;&#x3D; (R-I)(R+I)^{-1}+(R^T+I)^{-1}(R^T-I) \\<br> &amp;&#x3D; (R^T+I)^{-1} \left[ (R^T+I)(R-I)+(R^T-I)(R+I) \right] (R+I)^{-1} \\<br> &amp;&#x3D; (R^T+I)^{-1} \left[ (R-R^T)+(R^T-R) \right] (R+I)^{-1} \\<br> &amp;&#x3D; 0<br> \end{align*}<br> $$</p>
-<p> 由此我们证明了 $S$ 是反对称矩阵。</p>
-</li>
-<li><p>设 $x$ 是一个n维向量，满足 $(I-S)x&#x3D;0$ ，则有</p>
-</li>
-</ol>
-<p>$$<br>\begin{align*}<br>Sx &amp;&#x3D; x \\<br>x^TS^T &amp;&#x3D; x^T \\<br>x^TS^Tx &amp;&#x3D; x^Tx \\<br>-x^TSx &amp;&#x3D; x^Tx \\<br>-x^Tx &amp;&#x3D; x^Tx \\<br>x^Tx &amp;&#x3D; 0<br>\end{align*}<br>$$</p>
-<p>当且仅当 $x&#x3D;0$ 时满足上式。<br>因此 $I-S$ 是可逆矩阵。  </p>
-<ul>
-<li>总结一下，任意给一个不以 $-1$ 为特征值的方阵 $R$ ，我们都能找到反对称矩阵 $S&#x3D;(R-I)(R+I)^{-1}$ ，使得 $ R &#x3D; (I-S)^{-1}(I+S) $ ，因此凯莱公式成立。</li>
-</ul>
-<hr>
-<h4 id="进一步讨论"><a href="#进一步讨论" class="headerlink" title="进一步讨论"></a>进一步讨论</h4><p>如果 $R$ 是一个 $3×3$ 的矩阵，那么公式中的 $S$ 是一个 $3×3$ 的反对称矩阵，可以写成如下形式：</p>
-<p>$$<br>S&#x3D;\begin{bmatrix}<br>0  &amp;-s_3  &amp;s_2 \\<br>s_3  &amp;0  &amp;-s_1 \\<br>-s_2  &amp;s_1  &amp;0<br>\end{bmatrix}<br>$$</p>
-<p>或者用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E6%B1%82%E5%92%8C%E7%BA%A6%E5%AE%9A/2477100">爱因斯坦求和约定</a>来表示：</p>
-<p>$$<br>S_{ij} &#x3D; - \epsilon _{ijk}s_k<br>$$</p>
-<p>其中 $\epsilon$ 是 <strong>Levi-Civita</strong> 符号，该符号定义为</p>
-<p>$$<br>\epsilon_{ijk}&#x3D;<br>\begin{cases}<br>1 &amp;\text{i,j,k 是偶排列的} \\<br>-1 &amp;\text{i,j,k 是奇排列的} \\<br>0 &amp;\text{i,j,k 中有重复的} \\<br>\end{cases}<br>$$</p>
-<p>从中可以看出 $S$ 具有三个自由度，所以 $R$ 也具有三个自由度。  </p>
-<p>如果用 $S$ 表示出 $R$，可以得到</p>
-<p>$$<br>R&#x3D; \frac{1}{s_1^2+s_2^2+s_3^2+1}<br>\begin{bmatrix}<br>s_1^2-s_2^2-s_3^2+1 &amp;2s_1s_2-2s_3 &amp;2s_1s_3+2s_2 \\<br>2s_1s_2+2s_3 &amp;-s_1^2+s_2^2-s_3^2+1 &amp;2s_2s_3-2s_1 \\<br>2s_1s_3-2s_2 &amp;2s_2s_3+2s_1 &amp;-s_1^2-s_2^2+s_3^2+1<br>\end{bmatrix}<br>$$</p>
-<p>记向量 $\vec{s}&#x3D;\begin{bmatrix}s_1 \\ s_2 \\ s_3 \end{bmatrix}$ ，$\vec{s}$ 的 $l_2$ 范数为 $k&#x3D;\sqrt{s_1^2+s_2^2+s_3^2}$  </p>
-<p>设存在一个角度 $\theta \in \left[0,\pi \right]$ ，$\tan\frac{\theta}{2}&#x3D;k$，并且当$k \to \infty$ 时 $\theta &#x3D; \pi$  </p>
-<p>于是 $\sin\theta&#x3D;\frac{2k}{1+k^2}$， $\cos\theta&#x3D;\frac{1-k^2}{1+k^2}$  </p>
-<p>将 $\vec{s}$ 归一化，令 $\vec{t}&#x3D;\frac{\vec{s}}{k}$ ，$t_i&#x3D;\frac{s_i}{k}(i&#x3D;1,2,3)$ ，于是我们可以用 $t_i$ 和 $\theta$ 来表示 $R$ ：</p>
-<p>$$<br>R&#x3D;\begin{bmatrix}<br>t_1^2(1-\cos\theta)+\cos\theta &amp;t_1t_2(1-\cos\theta)-t_3\sin\theta &amp;t_1t_3(1-\cos\theta)+t_2\sin\theta \\<br>t_1t_2(1-\cos\theta)+t_3\sin\theta &amp;t_2^2(1-\cos\theta)+\cos\theta &amp;t_2t_3(1-\cos\theta)-t_1\sin\theta \\<br>t_1t_3(1-\cos\theta)-t_2\sin\theta &amp;t_2t_3(1-\cos\theta)+t_1\sin\theta &amp;t_3^2(1-\cos\theta)+\cos\theta<br>\end{bmatrix}<br>$$</p>
-<p>如果你对这样的矩阵形式熟悉的话，你会发现这恰好是绕单位向量 $\vec{t}$ 旋转 $\theta$ 角度对应的旋转矩阵。而 $\vec{t}$ 的方向与 $\vec{s}$ 相同，$\theta$ 的大小与 $\vec{s}$ 的模正相关， $\vec{s}$ 又和 $S$ 一一对应。由此我们也可以发现，在三维空间下，任意一个正交矩阵 $R$ ，如果 $-1$ 不是它的特征值，它就是一个纯粹的旋转矩阵，没有镜像的效果，那么它一定有一个确定的旋转轴和旋转角度，因此能够找到唯一的一个反对称阵 $S$ 与之对应。</p>
-
-      </div>
-      <div class="post-tags-categories">
-        
-        <div class="tags">
-          
-            <a href="/tags/%E5%AE%9A%E7%90%86/" class="">
-              定理
-            </a>
-          
-            <a href="/tags/%E8%AF%81%E6%98%8E/" class="">
-              证明
-            </a>
-          
-            <a href="/tags/%E5%85%AC%E5%BC%8F/" class="">
-              公式
-            </a>
-          
-            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="">
-              线性代数
-            </a>
-          
-        </div>
-        
-      </div>
-      
-        <div class="copyright">
-  <ul class="post-copyright">
-    <li class="post-copyright-author">
-    <strong>作者:  </strong>GreenZhu</a>
-    </li>
-    <li class="post-copyright-link">
-    <strong>文章链接:  </strong>
-    <a href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/" target="_blank" title="对正交矩阵凯莱公式的讨论">http://GreenZhu233.github.io/pro/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/</a>
-    </li>
-    <li class="post-copyright-license">
-      <strong>版权声明:   </strong>
-      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      许可协议。转载请注明出处!
-    </li>
-  </ul>
-<div>
-      
-    </article>
-    <!-- 上一篇文章和下一篇文章 -->
+  <div class="category-header-desc">
     
-      <!-- 文章详情页的上一页和下一页 -->
-<div class="post-nav">
-
-
-
-
-
-</div>
-
-    
-    
-
-    <!-- 打赏 -->
-    
-
-    <!-- 分享 -->
-    
-      <!-- https://github.com/overtrue/share.js -->
-<!-- 文章详情页的分享 -->
-<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-
-<script src="/js/shareJs/social-share.min.js"></script>
-</script>
-
-<style>
-  .social-share {
-    margin: 20px 0;
+      <span class="title" id="category-header-desc"></span>
+      <script>
+  function typedFn() {
+    const el = '#category-header-desc';
+    const type = 'categoryDetail';
+    let desc = '愿你如风，被人温柔以待'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: 100,
+      typeSpeed: 100,
+      loop: true,
+      backSpeed: 50,
+      showCursor: true
+    });
   }
-</style>
-
-
-    
-    
-    <!-- 评论 -->
-    <!-- 评论 -->
-
-  <div id="myComment">
-    
-      <div id="gitment-container"></div>
-
-    
-  </div>
-
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
-
-
-  </div>
-
-  <!-- 目录 -->
-  <aside id='l_side'>
-  
-    
-      <section class="widget side_blogger">
-  <div class='content'>
-    
+  typedFn();
+</script>
       
-        <a class='avatar flat-box circle' href='/about/'>
-          <img src='/greenzhu.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>绿竺</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">GreenBlog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="mailto:2546594311@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/GreenZhu233"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
   </div>
-</section>
-
-    
-  
-  
-  
-
-  <div class="layout_sticky">    
-    
-      
-<section class="widget side_toc">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="toc-main">
-      <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5%E7%9A%84%E5%87%AF%E8%8E%B1%E5%85%AC%E5%BC%8F%E8%A1%A8%E8%BF%B0"><span class="toc-text">正交矩阵的凯莱公式表述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E6%80%9D%E8%B7%AF"><span class="toc-text">证明思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E8%BF%87%E7%A8%8B"><span class="toc-text">证明过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E4%B8%80%E6%AD%A5%E8%AE%A8%E8%AE%BA"><span class="toc-text">进一步讨论</span></a></li></ol></li></ol></li></ol></li></ol> -->
-        <div class="toc"></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- 手机端目录按钮 -->
-<div id="toc-mobile-btn">
-  <i class="fas fa-list-ul" aria-hidden="true"></i>
+  <div class="mask-box"></div>
 </div>
 
-      
-  <section class="widget side_recent_post">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
-    
-  </header>
 
+<div class="category">
+  <div class="category-name">
+    <div class="name" style="background-color: #D7BDE2;">数学 分类</div>
+  </div>
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
 
-    <div class='content'>
-      
-      <!-- hash算法 -->
-      
-      <div class="aside-list">
-        
-          <div class="aside-list-item">
-            
-            
-            
+<section class="posts">
+  
+    
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2023-11-25</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/">对正交矩阵凯莱公式的讨论</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
 
-            <div class="post-img-box">
-              <a href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/photos/Caylay.png" class="lazyload placeholder" data-srcset="/photos/Caylay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%85%AC%E5%BC%8F/" rel="tag">公式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%9A%E7%90%86/" rel="tag">定理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag">线性代数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AF%81%E6%98%8E/" rel="tag">证明</a></li></ul>
+
             </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">11-25</span>
-                
-              </div>
-              <a class="post-title" href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/">对正交矩阵凯莱公式的讨论</a>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/%E6%95%B0%E5%AD%A6/">数学</a>
+</div>
+
+
             </div>
           </div>
-        
+          <div class="post-img-mobile">
+            <a href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/photos/Caylay.png" class="lazyload placeholder" data-srcset="/photos/Caylay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            正交矩阵的凯莱公式表述
+设 $R$ 是n维线性空间的方阵，若 $R$ 是不以 $-1$ 为特征值的正交矩阵，则存在反对称矩阵 $S$ ，使得$$ R &#x3D; (I-S)^{-1}(I+S) $$
+
+
+证明思路不妨从凯莱公式中反解S：
+
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/">
+            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
-
-    
-  </div>
-</aside>
-
-  <!-- 图片放大 Wrap images with fancybox support -->
-  <script src="/js/wrapImage.js"></script>
-</div>
-
-<!-- 文章详情页背景图 -->
-<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
-	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
-	<transition-group tag="ul" :name="names">
-		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
-			<img :src="image" class="bg-swiper-img no-lazy">
-		</li>
-	</transition-group>
-</div>
-<script>
-	var vm = new Vue({
-		el: '#appBgSwiper',
-		data: {
-			names: '' || 'fade' || 'fade', // translate-fade fade
-			mark: 0,
-			img: [],
-			bgColor: '',
-			time: null
-		},
-		methods: {   //添加方法
-			change(i, m) {
-				if (i > m) {
-					// this.names = 'fade';
-				} else if (i < m) {
-					// this.names = 'fade';
-				} else {
-					return;
-				}
-				this.mark = i;
-			},
-			prev() {
-				// this.names = 'fade';
-				this.mark--;
-				if (this.mark === -1) {
-					this.mark = 3;
-					return
-				}
-			},
-			next() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			autoPlay() {
-				// this.names = 'fade';
-				this.mark++;
-				if (this.mark === this.img.length) {
-					this.mark = 0;
-					return
-				}
-			},
-			play() {
-				let bgImgDelay = '' || '180000'
-				let delay = parseInt(bgImgDelay) || 180000;
-				this.time = setInterval(this.autoPlay, delay);
-			},
-			enter() {
-				clearInterval(this.time);
-			},
-			leave() {
-				this.play();
-			}
-		},
-		created() {
-			this.play()
-		},
-		beforeDestroy() {
-			clearInterval(this.time);
-		},
-		mounted() {
-			let prop = '' || '';
-			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
-			if (isImg) {
-				let img = prop.split(',');
-				let configRoot = '/'
-				let arrImg = [];
-				img.forEach(el => {
-					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
-					var objExp = new RegExp(Expression);
-
-					if (objExp.test(el)) {
-						// http or https
-						arrImg.push(el);
-					} else {
-						// 非http or https开头
-						// 本地文件
-						let firstStr = el.charAt(0);
-						if (firstStr == '/') {
-							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
-						}
-						el = configRoot + el;
-						arrImg.push(el);
-					}
-				})
-				this.img = arrImg;
-			} else {
-				this.bgColor = prop;
-			}
-		}
-	})
-</script>
-
-<style>
-	.bg-swiper-box {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
-
-	.bg-swiper-img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-	}
-</style>
-
-
-  <script>
-  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    // 文章章节标题不能为 “MathJax” ，否则会报错。
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-
-
-
-  <script>
-  function loadMermaid() {
-    if (document.getElementsByClassName('mermaid').length) {
-      if (window.mermaidJsLoad) mermaid.init()
-      else {
-        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
-          window.mermaidJsLoad = true
-          mermaid.initialize({
-            theme: 'default',
-          })
-          if ('true') {
-            mermaid.init();
-          }
-        })
-      }
-    }
-  };
-  document.addEventListener("DOMContentLoaded", function () {
-    loadMermaid();
-  })
-
-  document.addEventListener('pjax:complete', function () {
-    loadMermaid();
-  })
+      <div class="post-img">
+        <a href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/photos/Caylay.png" class="lazyload placeholder" data-srcset="/photos/Caylay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+        </a>
+      </div>
+    </article>
   
-</script>
-
+</section>
+</div>
+<div class="w-70">
+  
+</div>
 
       </main>
     </div>
