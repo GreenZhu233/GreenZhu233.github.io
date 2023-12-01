@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>角速度张量</title>
+      <link href="/2023/12/02/xue-xi-bi-ji-jiao-su-du-zhang-liang/"/>
+      <url>/2023/12/02/xue-xi-bi-ji-jiao-su-du-zhang-liang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>角速度张量这个概念，在理论力学和机器人学概论课上都出现过，但两门课程上用了不同的推导方式，并得到了两个不同的结果，这使我为之困惑了一段时间。因此，我将在此对这个概念的有关内容进行梳理，还原课上的两种推导方式，并解释结果差异的原因，作为对知识的梳理和巩固。  </p><h2 id="基本假设"><a href="#基本假设" class="headerlink" title="基本假设"></a>基本假设</h2><p>假设空间中有一个绕定点转动的刚体，转动中心为 $O$ ，以 $O$ 点为坐标原点建立两个坐标系，一个是<strong>固定坐标系</strong>(Laboratory Frame)：$\left [O;\hat{\mathbf{e}}_1,\hat{\mathbf{e}}_2,\hat{\mathbf{e}}_3 \right ]$ ，另一个是<strong>刚体坐标系</strong>(Body Frame)：$\left [O;\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3 \right ]$ 。固定坐标系是惯性系，刚体坐标系固连在刚体上。  </p><p>假设两个坐标系的基向量之间存在这样的关系式：  </p><p>$$<br>\begin{align*}<br>\begin{bmatrix}<br>\mathbf{e}_1 &amp;\mathbf{e}_2 &amp;\mathbf{e}_3<br>\end{bmatrix} &amp;&#x3D;<br>\begin{bmatrix}<br>\hat{\mathbf{e}}_1 &amp;\hat{\mathbf{e}}_2 &amp;\hat{\mathbf{e}}_3<br>\end{bmatrix} \mathbf{R}(t) \\<br>\begin{bmatrix}<br>\hat{\mathbf{e}}_1 &amp;\hat{\mathbf{e}}_2 &amp;\hat{\mathbf{e}}_3<br>\end{bmatrix} &amp;&#x3D;<br>\begin{bmatrix}<br>\mathbf{e}_1 &amp;\mathbf{e}_2 &amp;\mathbf{e}_3<br>\end{bmatrix} \mathbf{R}^T(t)<br>\end{align*}<br>$$  </p><p>$\mathbf{R}(t)$ 是与时间有关的正交矩阵，描述两个坐标系的关系，$\det(\mathbf{R}(t)) &#x3D; 1$ 。  </p><h2 id="推导方式一"><a href="#推导方式一" class="headerlink" title="推导方式一"></a>推导方式一</h2><p>用<a href="https://baike.baidu.com/item/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E6%B1%82%E5%92%8C%E7%BA%A6%E5%AE%9A/2477100">爱因斯坦求和约定</a>（为方便起见，本文将多次使用该约定），上式可以写作：  </p><p>$$<br>\begin{cases}<br>\mathbf{e} _i &#x3D; \mathbf{R} _{ji}\hat{\mathbf{e}} _j \\<br>\hat{\mathbf{e}} _j &#x3D; \mathbf{R} _{jk}\mathbf{e} _k<br>\end{cases}<br>$$  </p><p>假设刚体上有一点 $P$ ，它的向径为 $\mathbf r$ 。需要注意的是，物理学中的矢量是一个独立于坐标系的、客观存在的量，在不同坐标系下有不同的坐标。  </p><p>设 $\mathbf r$ 在刚体坐标系中的坐标为 $\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ ，那么 $\mathbf r &#x3D; x_i \mathbf{e}_i$ 。  </p><p>设 $P$ 在固定坐标系中的速度为 $\mathbf{v}_P$ ，则有  </p><p>$$<br>\begin{align*}<br>\mathbf{v} _P &amp;&#x3D; \frac{\mathrm{d} \mathbf{r}}{\mathrm{d} t} \\<br>&amp;&#x3D; x_i \frac{\mathrm{d} \mathbf{e} _i}{\mathrm{d} t} \\<br>&amp;&#x3D; x_i \frac{\mathrm{d} \mathbf{R} _{ji}}{\mathrm{d} t} \hat{\mathbf{e}} _j \\<br>&amp;&#x3D; x_i \frac{\mathrm{d} \mathbf{R} _{ji}}{\mathrm{d} t} \mathbf{R} _{jk} \mathbf{e} _k \\<br>&amp;&#x3D; x_i(\dot{\mathbf{R}}^T \mathbf{R}) _{ik} \mathbf{e} _k \\<br>&amp;&#x3D; x_i (\mathbf{R}^T\dot{\mathbf{R}}) _{ki} \mathbf{e} _k<br>\end{align*}<br>$$  </p><p>事实上，$\mathbf{R}^T \dot{\mathbf{R}}$ 是一个反对称矩阵。</p><details ><summary pointer> 证明过程 </summary>              <div class='content'>              <p>$$<br>\begin{align*}<br>\mathbf{R}^T\mathbf{R} &amp;&#x3D; \mathbf{I} \\<br>\frac{\mathrm{d}}{\mathrm{d}t} (\mathbf{R}^T\mathbf{R}) &amp;&#x3D; \mathbf{0} \\<br>\dot{\mathbf{R}}^T\mathbf{R} + \mathbf{R}^T\dot{\mathbf{R}} &amp;&#x3D; \mathbf{0} \\<br>(\mathbf{R}^T\dot{\mathbf{R}})^T + \mathbf{R}^T\dot{\mathbf{R}} &amp;&#x3D; \mathbf 0<br>\end{align*}<br>$$</p>              </div>            </details><p>定义 $\mathbf S &#x3D; \mathbf{R}^T\dot{\mathbf{R}} &#x3D; \begin{bmatrix} 0 &amp;-\Omega_3 &amp;\Omega_2 \\ \Omega_3 &amp;0 &amp;-\Omega_1 \\ -\Omega_2 &amp;\Omega_1 &amp;0 \end{bmatrix}$ ，张量 $\overset{\rightrightarrows}{\mathbf S} &#x3D; \mathbf{S}_{ij}\mathbf{e}_i\mathbf{e}_j$</p><details ><summary pointer> 张量的运算法则 </summary>              <div class='content'>              <p>$$<br>\begin{align*}<br>\overset{\rightrightarrows}{\mathbf S} \cdot \mathbf{r} &amp;&#x3D; \mathbf{S}_{ij}\mathbf{e}_i\mathbf{e}_j \cdot (x_k \mathbf{e} _k) \\<br>&amp;&#x3D; \mathbf{S} _{ij}x_k\mathbf{e}_i(\mathbf{e} _j \cdot \mathbf{e} _k) \\<br>&amp;&#x3D; \mathbf{S} _{ij}x_k \delta _{jk} \mathbf{e} _i \\<br>&amp;&#x3D; \mathbf{S} _{ij}x_j\mathbf{e}_i<br>\end{align*}<br>$$<br>其中 $\delta$ 是<a href="https://zh.wikipedia.org/wiki/%E5%85%8B%E7%BD%97%E5%86%85%E5%85%8B%CE%B4%E5%87%BD%E6%95%B0">克罗内克(Kronecker)函数</a></p>              </div>            </details><p>则 $\mathbf{v} _P &#x3D; \mathbf{S} _{ki} x_i \mathbf{e}_k &#x3D; \overset{\rightrightarrows}{\mathbf S} \cdot \mathbf{r}$  </p><p>若用<a href="https://baike.baidu.com/item/%E5%88%97%E7%BB%B4-%E5%A5%87%E7%BB%B4%E5%A1%94%E7%AC%A6%E5%8F%B7/22362732">Levi-Civita符号</a>表示，$S_{ij} &#x3D; - \epsilon _{ijk}\Omega _k$ ，$\mathbf{v} _P &#x3D; -\epsilon _{kij} \Omega _j x_i \mathbf{e} _k &#x3D; \begin{bmatrix} \Omega _1 \\ \Omega _2 \\ \Omega _3 \end{bmatrix} \times \mathbf{r}$  </p><p>也就是说，我们得到了刚体的角速度张量 $\overset{\rightrightarrows}{\mathbf S}$ ，它在<strong>刚体坐标系</strong>中的表达为 $\mathbf S &#x3D; \mathbf{R}^T\dot{\mathbf{R}} &#x3D; \begin{bmatrix} 0 &amp;-\Omega_3 &amp;\Omega_2 \\ \Omega_3 &amp;0 &amp;-\Omega_1 \\ -\Omega_2 &amp;\Omega_1 &amp;0 \end{bmatrix}$ ，而 $\begin{bmatrix} \Omega _1 \\ \Omega _2 \\ \Omega _3 \end{bmatrix}$ 是其对应的角速度矢量在<strong>刚体坐标系</strong>中的坐标。  </p><h2 id="推导方式二"><a href="#推导方式二" class="headerlink" title="推导方式二"></a>推导方式二</h2><p>如果直接对 $\mathbf R$ 求导，根据导数的定义，有</p><p>$$<br>\dot{\mathbf{R}} &#x3D; \lim _{\Delta t \to 0} \frac{\mathbf{R}(t+\Delta t) - \mathbf{R}(t)}{\Delta t}<br>$$</p><p>假设 $t$ 时刻刚体的瞬时转轴为 $K$ ，$\Delta t$时间内转过的角度为 $\Delta \theta$ ，记 $\mathbf{R} _K (\Delta \theta)$ 是<strong>固定坐标系</strong>中绕 $K$ 轴旋转 $\Delta \theta$ 对应的旋转矩阵。  </p><p>于是</p><p>$$<br>\mathbf{R}(t+\Delta t) &#x3D; \mathbf{R} _K (\Delta \theta) \mathbf{R} (t)<br>$$</p><p>所以</p><p>$$<br>\begin{align*}<br>\dot{\mathbf{R}} &amp;&#x3D; \lim _{\Delta t \to 0} \left( \frac{\mathbf{R} _K(\Delta \theta) - \mathbf{I} _3}{\Delta t} \mathbf{R}(t) \right) \\<br>&amp;&#x3D; \left( \lim _{\Delta t \to 0}\frac{\mathbf{R} _K(\Delta \theta) - \mathbf{I} _3}{\Delta t} \right) \mathbf{R}(t)<br>\end{align*}<br>$$</p><p>接下来的推导中，我们要先知道 $\mathbf{R} _K (\theta)$ 的表达式，我在这里不作证明，直接引用：</p><p>$$<br>\mathbf{R} _K(\theta) &#x3D; \begin{bmatrix}<br>k_1^2(1-\cos\theta)+\cos\theta &amp;k_1k_2(1-\cos\theta)-k_3\sin\theta &amp;k_1k_3(1-\cos\theta)+k_2\sin\theta \\<br>k_1k_2(1-\cos\theta)+k_3\sin\theta &amp;k_2^2(1-\cos\theta)+\cos\theta &amp;k_2k_3(1-\cos\theta)-k_1\sin\theta \\<br>k_1k_3(1-\cos\theta)-k_2\sin\theta &amp;k_2k_3(1-\cos\theta)+k_1\sin\theta &amp;k_3^2(1-\cos\theta)+\cos\theta<br>\end{bmatrix}<br>$$</p><p>$$<br>\mathbf{k} &#x3D; \begin{bmatrix}\hat{\mathbf e} _1 &amp;\hat{\mathbf e} _2 &amp;\hat{\mathbf e} _3 \end{bmatrix} \begin{bmatrix} k_1 \\ k_2 \\ k_3 \end{bmatrix} 是转轴K方向的单位向量<br>$$</p><p>代入 $\theta &#x3D; \Delta \theta$ ，并保留一阶小量，得</p><p>$$<br>\mathbf{R} _k(\Delta \theta) &#x3D; \begin{bmatrix}<br>1 &amp;-k_3\Delta \theta &amp;k_2\Delta \theta \\<br>k_3\Delta \theta &amp;1 &amp;-k_1\Delta \theta \\<br>-k_2\Delta \theta &amp;k_1\Delta \theta &amp;1<br>\end{bmatrix}<br>$$</p><p>于是</p><p>$$<br>\dot{\mathbf{R}} &#x3D; \lim _{\Delta t \to 0} \frac{\begin{bmatrix}<br>0 &amp;-k_3\Delta \theta &amp;k_2\Delta \theta \\<br>k_3\Delta \theta &amp;0 &amp;-k_1\Delta \theta \\<br>-k_2\Delta \theta &amp;k_1\Delta \theta &amp;0<br>\end{bmatrix}}{\Delta t} \mathbf{R}(t)<br>$$</p><p>设 $\Omega _i &#x3D; k _i \lim _{\Delta t \to 0} \frac{\Delta \theta}{\Delta t}$  </p><p>则<br>$$<br>\dot{\mathbf{R}} &#x3D; \begin{bmatrix}<br>0 &amp;-\Omega _3 &amp;\Omega _2 \\<br>\Omega _3 &amp;0 &amp;-\Omega _1 \\<br>-\Omega _2 &amp;\Omega _1 &amp;0<br>\end{bmatrix} \mathbf{R}(t)<br>$$</p><p>两边同时右乘 $\mathbf{R}^T(t)$ ，得</p><p>$$<br>\mathbf{S} &#x3D; \dot{\mathbf{R}}\mathbf{R}^T &#x3D; \begin{bmatrix}<br>0 &amp;-\Omega _3 &amp;\Omega _2 \\<br>\Omega _3 &amp;0 &amp;-\Omega _1 \\<br>-\Omega _2 &amp;\Omega _1 &amp;0<br>\end{bmatrix}<br>$$</p><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>至此，我们已经通过两种不同方式得到了角速度的反对称矩阵表达式。但眼尖的我发现，一个是 $\mathbf{S} &#x3D; \mathbf{R}^T\dot{\mathbf{R}}$ ，另一个是 $\mathbf{S} &#x3D; \dot{\mathbf{R}}\mathbf{R}^T$ ，两个 $\mathbf{S}$ 居然是不同的！问题究竟出在何处？</p><h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>你可能已经注意到，我在行文过程中将所有的<strong>坐标系</strong>都加粗了。没错，问题就出在坐标系的选取上。为了区分，我将前后得到的两个 $\mathbf S$ 标记为 $\mathbf S _1$ 和 $\mathbf S _2$ ，其中 $\mathbf S _1 &#x3D; \mathbf{R}^T\dot{\mathbf{R}}$ ，$\mathbf S _2 &#x3D; \dot{\mathbf{R}}\mathbf{R}^T$。  </p><p>$\mathbf S _1$ 在文中已经强调过，它是角速度张量在<strong>刚体坐标系</strong>下的表达。在推导 $\mathbf S _2$ 的过程中，我们用到的 $\mathbf k$ 选取的是<strong>固定坐标系</strong>中的坐标，因此 $\mathbf S _2$ 自然就是同一个角速度张量在<strong>固定坐标系</strong>下的表达。根据同一个张量在不同坐标系下的矩阵满足相似关系：$\mathbf S _2 &#x3D; \mathbf R \mathbf S _1 \mathbf R^T$ ，将 $\mathbf S _1 &#x3D; \mathbf{R}^T\dot{\mathbf{R}}$ 和 $\mathbf S _2 &#x3D; \dot{\mathbf{R}}\mathbf{R}^T$ 代入，发现等式恰好成立。  </p><p>因此，这两种推导方式得到的角速度张量其实是一致的，形式上的区别仅仅来源于坐标系的不同，至此问题得以解决。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 力学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 公式 </tag>
+            
+            <tag> 线性代数 </tag>
+            
+            <tag> 机器人学 </tag>
+            
+            <tag> 理论力学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>对正交矩阵凯莱公式的讨论</title>
       <link href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/"/>
       <url>/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/</url>
@@ -20,13 +51,13 @@
       
         <tags>
             
-            <tag> 定理 </tag>
-            
-            <tag> 证明 </tag>
-            
             <tag> 公式 </tag>
             
             <tag> 线性代数 </tag>
+            
+            <tag> 定理 </tag>
+            
+            <tag> 证明 </tag>
             
         </tags>
       

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>归档: 2023 | GreenBlog</title>
+  <title>角速度张量 | GreenBlog</title>
 
   <link rel="icon" type="image/png" href="/greenzhu.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -618,123 +618,600 @@
     
 </header>
         <!-- 内容区域 -->
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
+        
+ <!-- prismjs 代码高亮 -->
+ 
 
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        角速度张量
+      </span>
+    </div>
+    
+    
       
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2023-12-02 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E5%8A%9B%E5%AD%A6/" class="post-detail-header_category">
+              力学
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.9k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 9分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
+    
   </div>
-  <div class="mask-box"></div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
 </div>
 
-<!-- hash算法 -->
 
 
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>角速度张量这个概念，在理论力学和机器人学概论课上都出现过，但两门课程上用了不同的推导方式，并得到了两个不同的结果，这使我为之困惑了一段时间。因此，我将在此对这个概念的有关内容进行梳理，还原课上的两种推导方式，并解释结果差异的原因，作为对知识的梳理和巩固。  </p>
+<h2 id="基本假设"><a href="#基本假设" class="headerlink" title="基本假设"></a>基本假设</h2><p>假设空间中有一个绕定点转动的刚体，转动中心为 $O$ ，以 $O$ 点为坐标原点建立两个坐标系，一个是<strong>固定坐标系</strong>(Laboratory Frame)：$\left [O;\hat{\mathbf{e}}_1,\hat{\mathbf{e}}_2,\hat{\mathbf{e}}_3 \right ]$ ，另一个是<strong>刚体坐标系</strong>(Body Frame)：$\left [O;\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3 \right ]$ 。固定坐标系是惯性系，刚体坐标系固连在刚体上。  </p>
+<p>假设两个坐标系的基向量之间存在这样的关系式：  </p>
+<p>$$<br>\begin{align*}<br>\begin{bmatrix}<br>\mathbf{e}_1 &amp;\mathbf{e}_2 &amp;\mathbf{e}_3<br>\end{bmatrix} &amp;&#x3D;<br>\begin{bmatrix}<br>\hat{\mathbf{e}}_1 &amp;\hat{\mathbf{e}}_2 &amp;\hat{\mathbf{e}}_3<br>\end{bmatrix} \mathbf{R}(t) \\<br>\begin{bmatrix}<br>\hat{\mathbf{e}}_1 &amp;\hat{\mathbf{e}}_2 &amp;\hat{\mathbf{e}}_3<br>\end{bmatrix} &amp;&#x3D;<br>\begin{bmatrix}<br>\mathbf{e}_1 &amp;\mathbf{e}_2 &amp;\mathbf{e}_3<br>\end{bmatrix} \mathbf{R}^T(t)<br>\end{align*}<br>$$  </p>
+<p>$\mathbf{R}(t)$ 是与时间有关的正交矩阵，描述两个坐标系的关系，$\det(\mathbf{R}(t)) &#x3D; 1$ 。  </p>
+<h2 id="推导方式一"><a href="#推导方式一" class="headerlink" title="推导方式一"></a>推导方式一</h2><p>用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E6%B1%82%E5%92%8C%E7%BA%A6%E5%AE%9A/2477100">爱因斯坦求和约定</a>（为方便起见，本文将多次使用该约定），上式可以写作：  </p>
+<p>$$<br>\begin{cases}<br>\mathbf{e} _i &#x3D; \mathbf{R} _{ji}\hat{\mathbf{e}} _j \\<br>\hat{\mathbf{e}} _j &#x3D; \mathbf{R} _{jk}\mathbf{e} _k<br>\end{cases}<br>$$  </p>
+<p>假设刚体上有一点 $P$ ，它的向径为 $\mathbf r$ 。需要注意的是，物理学中的矢量是一个独立于坐标系的、客观存在的量，在不同坐标系下有不同的坐标。  </p>
+<p>设 $\mathbf r$ 在刚体坐标系中的坐标为 $\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$ ，那么 $\mathbf r &#x3D; x_i \mathbf{e}_i$ 。  </p>
+<p>设 $P$ 在固定坐标系中的速度为 $\mathbf{v}_P$ ，则有  </p>
+<p>$$<br>\begin{align*}<br>\mathbf{v} _P &amp;&#x3D; \frac{\mathrm{d} \mathbf{r}}{\mathrm{d} t} \\<br>&amp;&#x3D; x_i \frac{\mathrm{d} \mathbf{e} _i}{\mathrm{d} t} \\<br>&amp;&#x3D; x_i \frac{\mathrm{d} \mathbf{R} _{ji}}{\mathrm{d} t} \hat{\mathbf{e}} _j \\<br>&amp;&#x3D; x_i \frac{\mathrm{d} \mathbf{R} _{ji}}{\mathrm{d} t} \mathbf{R} _{jk} \mathbf{e} _k \\<br>&amp;&#x3D; x_i(\dot{\mathbf{R}}^T \mathbf{R}) _{ik} \mathbf{e} _k \\<br>&amp;&#x3D; x_i (\mathbf{R}^T\dot{\mathbf{R}}) _{ki} \mathbf{e} _k<br>\end{align*}<br>$$  </p>
+<p>事实上，$\mathbf{R}^T \dot{\mathbf{R}}$ 是一个反对称矩阵。</p>
+<details ><summary pointer> 证明过程 </summary>
+              <div class='content'>
+              <p>$$<br>\begin{align*}<br>\mathbf{R}^T\mathbf{R} &amp;&#x3D; \mathbf{I} \\<br>\frac{\mathrm{d}}{\mathrm{d}t} (\mathbf{R}^T\mathbf{R}) &amp;&#x3D; \mathbf{0} \\<br>\dot{\mathbf{R}}^T\mathbf{R} + \mathbf{R}^T\dot{\mathbf{R}} &amp;&#x3D; \mathbf{0} \\<br>(\mathbf{R}^T\dot{\mathbf{R}})^T + \mathbf{R}^T\dot{\mathbf{R}} &amp;&#x3D; \mathbf 0<br>\end{align*}<br>$$</p>
+              </div>
+            </details>
+
+<p>定义 $\mathbf S &#x3D; \mathbf{R}^T\dot{\mathbf{R}} &#x3D; \begin{bmatrix} 0 &amp;-\Omega_3 &amp;\Omega_2 \\ \Omega_3 &amp;0 &amp;-\Omega_1 \\ -\Omega_2 &amp;\Omega_1 &amp;0 \end{bmatrix}$ ，张量 $\overset{\rightrightarrows}{\mathbf S} &#x3D; \mathbf{S}_{ij}\mathbf{e}_i\mathbf{e}_j$</p>
+<details ><summary pointer> 张量的运算法则 </summary>
+              <div class='content'>
+              <p>$$<br>\begin{align*}<br>\overset{\rightrightarrows}{\mathbf S} \cdot \mathbf{r} &amp;&#x3D; \mathbf{S}_{ij}\mathbf{e}_i\mathbf{e}_j \cdot (x_k \mathbf{e} _k) \\<br>&amp;&#x3D; \mathbf{S} _{ij}x_k\mathbf{e}_i(\mathbf{e} _j \cdot \mathbf{e} _k) \\<br>&amp;&#x3D; \mathbf{S} _{ij}x_k \delta _{jk} \mathbf{e} _i \\<br>&amp;&#x3D; \mathbf{S} _{ij}x_j\mathbf{e}_i<br>\end{align*}<br>$$<br>其中 $\delta$ 是<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%85%8B%E7%BD%97%E5%86%85%E5%85%8B%CE%B4%E5%87%BD%E6%95%B0">克罗内克(Kronecker)函数</a></p>
+              </div>
+            </details>
+
+<p>则 $\mathbf{v} _P &#x3D; \mathbf{S} _{ki} x_i \mathbf{e}_k &#x3D; \overset{\rightrightarrows}{\mathbf S} \cdot \mathbf{r}$  </p>
+<p>若用<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%88%97%E7%BB%B4-%E5%A5%87%E7%BB%B4%E5%A1%94%E7%AC%A6%E5%8F%B7/22362732">Levi-Civita符号</a>表示，$S_{ij} &#x3D; - \epsilon _{ijk}\Omega _k$ ，$\mathbf{v} _P &#x3D; -\epsilon _{kij} \Omega _j x_i \mathbf{e} _k &#x3D; \begin{bmatrix} \Omega _1 \\ \Omega _2 \\ \Omega _3 \end{bmatrix} \times \mathbf{r}$  </p>
+<p>也就是说，我们得到了刚体的角速度张量 $\overset{\rightrightarrows}{\mathbf S}$ ，它在<strong>刚体坐标系</strong>中的表达为 $\mathbf S &#x3D; \mathbf{R}^T\dot{\mathbf{R}} &#x3D; \begin{bmatrix} 0 &amp;-\Omega_3 &amp;\Omega_2 \\ \Omega_3 &amp;0 &amp;-\Omega_1 \\ -\Omega_2 &amp;\Omega_1 &amp;0 \end{bmatrix}$ ，而 $\begin{bmatrix} \Omega _1 \\ \Omega _2 \\ \Omega _3 \end{bmatrix}$ 是其对应的角速度矢量在<strong>刚体坐标系</strong>中的坐标。  </p>
+<h2 id="推导方式二"><a href="#推导方式二" class="headerlink" title="推导方式二"></a>推导方式二</h2><p>如果直接对 $\mathbf R$ 求导，根据导数的定义，有</p>
+<p>$$<br>\dot{\mathbf{R}} &#x3D; \lim _{\Delta t \to 0} \frac{\mathbf{R}(t+\Delta t) - \mathbf{R}(t)}{\Delta t}<br>$$</p>
+<p>假设 $t$ 时刻刚体的瞬时转轴为 $K$ ，$\Delta t$时间内转过的角度为 $\Delta \theta$ ，记 $\mathbf{R} _K (\Delta \theta)$ 是<strong>固定坐标系</strong>中绕 $K$ 轴旋转 $\Delta \theta$ 对应的旋转矩阵。  </p>
+<p>于是</p>
+<p>$$<br>\mathbf{R}(t+\Delta t) &#x3D; \mathbf{R} _K (\Delta \theta) \mathbf{R} (t)<br>$$</p>
+<p>所以</p>
+<p>$$<br>\begin{align*}<br>\dot{\mathbf{R}} &amp;&#x3D; \lim _{\Delta t \to 0} \left( \frac{\mathbf{R} _K(\Delta \theta) - \mathbf{I} _3}{\Delta t} \mathbf{R}(t) \right) \\<br>&amp;&#x3D; \left( \lim _{\Delta t \to 0}\frac{\mathbf{R} _K(\Delta \theta) - \mathbf{I} _3}{\Delta t} \right) \mathbf{R}(t)<br>\end{align*}<br>$$</p>
+<p>接下来的推导中，我们要先知道 $\mathbf{R} _K (\theta)$ 的表达式，我在这里不作证明，直接引用：</p>
+<p>$$<br>\mathbf{R} _K(\theta) &#x3D; \begin{bmatrix}<br>k_1^2(1-\cos\theta)+\cos\theta &amp;k_1k_2(1-\cos\theta)-k_3\sin\theta &amp;k_1k_3(1-\cos\theta)+k_2\sin\theta \\<br>k_1k_2(1-\cos\theta)+k_3\sin\theta &amp;k_2^2(1-\cos\theta)+\cos\theta &amp;k_2k_3(1-\cos\theta)-k_1\sin\theta \\<br>k_1k_3(1-\cos\theta)-k_2\sin\theta &amp;k_2k_3(1-\cos\theta)+k_1\sin\theta &amp;k_3^2(1-\cos\theta)+\cos\theta<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>\mathbf{k} &#x3D; \begin{bmatrix}\hat{\mathbf e} _1 &amp;\hat{\mathbf e} _2 &amp;\hat{\mathbf e} _3 \end{bmatrix} \begin{bmatrix} k_1 \\ k_2 \\ k_3 \end{bmatrix} 是转轴K方向的单位向量<br>$$</p>
+<p>代入 $\theta &#x3D; \Delta \theta$ ，并保留一阶小量，得</p>
+<p>$$<br>\mathbf{R} _k(\Delta \theta) &#x3D; \begin{bmatrix}<br>1 &amp;-k_3\Delta \theta &amp;k_2\Delta \theta \\<br>k_3\Delta \theta &amp;1 &amp;-k_1\Delta \theta \\<br>-k_2\Delta \theta &amp;k_1\Delta \theta &amp;1<br>\end{bmatrix}<br>$$</p>
+<p>于是</p>
+<p>$$<br>\dot{\mathbf{R}} &#x3D; \lim _{\Delta t \to 0} \frac{\begin{bmatrix}<br>0 &amp;-k_3\Delta \theta &amp;k_2\Delta \theta \\<br>k_3\Delta \theta &amp;0 &amp;-k_1\Delta \theta \\<br>-k_2\Delta \theta &amp;k_1\Delta \theta &amp;0<br>\end{bmatrix}}{\Delta t} \mathbf{R}(t)<br>$$</p>
+<p>设 $\Omega _i &#x3D; k _i \lim _{\Delta t \to 0} \frac{\Delta \theta}{\Delta t}$  </p>
+<p>则<br>$$<br>\dot{\mathbf{R}} &#x3D; \begin{bmatrix}<br>0 &amp;-\Omega _3 &amp;\Omega _2 \\<br>\Omega _3 &amp;0 &amp;-\Omega _1 \\<br>-\Omega _2 &amp;\Omega _1 &amp;0<br>\end{bmatrix} \mathbf{R}(t)<br>$$</p>
+<p>两边同时右乘 $\mathbf{R}^T(t)$ ，得</p>
+<p>$$<br>\mathbf{S} &#x3D; \dot{\mathbf{R}}\mathbf{R}^T &#x3D; \begin{bmatrix}<br>0 &amp;-\Omega _3 &amp;\Omega _2 \\<br>\Omega _3 &amp;0 &amp;-\Omega _1 \\<br>-\Omega _2 &amp;\Omega _1 &amp;0<br>\end{bmatrix}<br>$$</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>至此，我们已经通过两种不同方式得到了角速度的反对称矩阵表达式。但眼尖的我发现，一个是 $\mathbf{S} &#x3D; \mathbf{R}^T\dot{\mathbf{R}}$ ，另一个是 $\mathbf{S} &#x3D; \dot{\mathbf{R}}\mathbf{R}^T$ ，两个 $\mathbf{S}$ 居然是不同的！问题究竟出在何处？</p>
+<h2 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h2><p>你可能已经注意到，我在行文过程中将所有的<strong>坐标系</strong>都加粗了。没错，问题就出在坐标系的选取上。为了区分，我将前后得到的两个 $\mathbf S$ 标记为 $\mathbf S _1$ 和 $\mathbf S _2$ ，其中 $\mathbf S _1 &#x3D; \mathbf{R}^T\dot{\mathbf{R}}$ ，$\mathbf S _2 &#x3D; \dot{\mathbf{R}}\mathbf{R}^T$。  </p>
+<p>$\mathbf S _1$ 在文中已经强调过，它是角速度张量在<strong>刚体坐标系</strong>下的表达。在推导 $\mathbf S _2$ 的过程中，我们用到的 $\mathbf k$ 选取的是<strong>固定坐标系</strong>中的坐标，因此 $\mathbf S _2$ 自然就是同一个角速度张量在<strong>固定坐标系</strong>下的表达。根据同一个张量在不同坐标系下的矩阵满足相似关系：$\mathbf S _2 &#x3D; \mathbf R \mathbf S _1 \mathbf R^T$ ，将 $\mathbf S _1 &#x3D; \mathbf{R}^T\dot{\mathbf{R}}$ 和 $\mathbf S _2 &#x3D; \dot{\mathbf{R}}\mathbf{R}^T$ 代入，发现等式恰好成立。  </p>
+<p>因此，这两种推导方式得到的角速度张量其实是一致的，形式上的区别仅仅来源于坐标系的不同，至此问题得以解决。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E5%85%AC%E5%BC%8F/" class="">
+              公式
+            </a>
+          
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="">
+              线性代数
+            </a>
+          
+            <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/" class="">
+              机器人学
+            </a>
+          
+            <a href="/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/" class="">
+              理论力学
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>GreenZhu</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2023/12/02/xue-xi-bi-ji-jiao-su-du-zhang-liang/" target="_blank" title="角速度张量">http://GreenZhu233.github.io/pro/2023/12/02/xue-xi-bi-ji-jiao-su-du-zhang-liang/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/photos/Caylay.png" class="lazyload placeholder" data-srcset="/photos/Caylay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">对正交矩阵凯莱公式的讨论</div>
+      </div>
+      <!-- <div class="content">
+        正交矩阵的凯莱公式表述
+设 $R$ 是n维线性空间的方阵，若 $R$ 是不以 $-1$ 为特征值的正交矩阵，则存在反对称
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box circle' href='/about/'>
+          <img src='/greenzhu.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>绿竺</h2>
         
         
+        
+          <p><span id="jinrishici-sentence">GreenBlog</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
           
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/archives/2023">2023</a>
-            </div>
+            <a href="mailto:2546594311@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
           
-          <li class="post-item" data-aos="fade-left">
+        
+          
+            <a href="https://github.com/GreenZhu233"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E8%A8%80"><span class="toc-text">序言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE"><span class="toc-text">基本假设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BC%E6%96%B9%E5%BC%8F%E4%B8%80"><span class="toc-text">推导方式一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E5%AF%BC%E6%96%B9%E5%BC%8F%E4%BA%8C"><span class="toc-text">推导方式二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A"><span class="toc-text">解释</span></a></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/2023/12/02/xue-xi-bi-ji-jiao-su-du-zhang-liang/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">12-02</span>
+                
+                  <span class="post-date">12-02</span>
+                
               </div>
               <a class="post-title" href="/2023/12/02/xue-xi-bi-ji-jiao-su-du-zhang-liang/">角速度张量</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="/photos/Caylay.png" class="lazyload placeholder" data-srcset="/photos/Caylay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="/photos/Caylay.png" class="lazyload placeholder" data-srcset="/photos/Caylay.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">11-25</span>
+                
+                  <span class="post-date">11-25</span>
+                
               </div>
               <a class="post-title" href="/2023/11/25/dui-zheng-jiao-ju-zhen-kai-lai-gong-shi-de-tao-lun/">对正交矩阵凯莱公式的讨论</a>
             </div>
-          </li>
+          </div>
         
-      </ul>
+      </div>
     </div>
   </section>
-  <div class="w-70">
+
     
   </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
 </div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
