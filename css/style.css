@@ -8383,9 +8383,7 @@ div.tabs .tab-content .tab-pane > .note:last-child {
   min-width: 0 !important;
 }
 .article mjx-container[jax="CHTML"][display="true"],
-.article .has-jax {
-  overflow: auto hidden;
-}
+.article .has-jax,
 .article mjx-container + br {
   display: none;
 }
