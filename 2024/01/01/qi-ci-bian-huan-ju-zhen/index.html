@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>关于我 | GreenBlog</title>
+  <title>齐次变换矩阵 | GreenBlog</title>
 
   <link rel="icon" type="image/png" href="/greenzhu.png">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -632,17 +632,52 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        关于我
+        齐次变换矩阵
       </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2024-01-01 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E6%95%B0%E5%AD%A6/" class="post-detail-header_category">
+              数学
+            </a>
+          
+        </span>
+      
+
+      
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fas fa-file-text-o"></i> 字数统计: 1.4k |
+          </span>
+  
+          <span class="min2read">
+            <i class="fas fa-clock"></i> 阅读时长: 6分钟 |
+          </span>
+  
+          
+            <span class="reading">
+              <i class="fas fa-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          
+        </div>
+      
     
   </div>
   
@@ -660,13 +695,61 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h2 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h2><p>普通大学大二本科生，职业规划是做纯牛马。</p>
-<h2 id="我的游戏"><a href="#我的游戏" class="headerlink" title="我的游戏"></a>我的游戏</h2><h4 id="Minecraft"><a href="#Minecraft" class="headerlink" title="Minecraft"></a>Minecraft</h4><p>中学期间沉迷于这款游戏，它有着完全开放自由的世界，也可以自由添加各种各样的模组改变游戏玩法。哪怕是不添加任何模组的纯净原版，仅仅靠图灵完备的红石系统，就足以让游戏的可玩性发散到无穷大。  </p>
-<h4 id="原神"><a href="#原神" class="headerlink" title="原神"></a>原神</h4><span class='btn hollow'><a class="button" target="_blank" rel="noopener" href='https://ys.mihoyo.com/' title='启动！'><i class='fa-solid fa-circle-play'></i>启动！</a></span>  
-<p>58级萌新一枚，氪金不多，操作一般，不爱凹深渊，喜欢探索地图、做任务、钓鱼、做特色料理。</p>
+        <h1 id="什么是齐次变换矩阵"><a href="#什么是齐次变换矩阵" class="headerlink" title="什么是齐次变换矩阵"></a>什么是齐次变换矩阵</h1><h2 id="空间描述"><a href="#空间描述" class="headerlink" title="空间描述"></a>空间描述</h2><p>为了描述一个刚体在空间中的运动，我们需要表达出它的<strong>位置</strong>和<strong>姿态</strong>。</p>
+<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><p>在坐标系 $\left \{A \right \}$ 中，任意点可以表示成一个 $3 \times 1$ 的位置矢量</p>
+<p>$$<br>\sideset{^A}{}P &#x3D; \begin{bmatrix}<br>p_x \\<br>p_y \\<br>p_z<br>\end{bmatrix}<br>$$</p>
+<h3 id="姿态"><a href="#姿态" class="headerlink" title="姿态"></a>姿态</h3><p>设 $\left \{B \right \}$ 为刚体的固连系，刚体的姿态定义为 $\left \{B \right \}$ 的三个基矢量 $\hat{X} _B, \hat{Y} _B, \hat{Z} _B$ 在 $\left \{A \right \}$ 中的坐标，将这三个坐标拼成一个矩阵，</p>
+<p>$$<br>\begin{align*}<br>\sideset{_B^A}{}R &amp;&#x3D; \begin{bmatrix}<br>\sideset{^A}{}{\hat X}_B &amp;\sideset{^A}{}{\hat Y}_B &amp;\sideset{^A}{}{\hat Z}_B<br>\end{bmatrix} \\<br>&amp;&#x3D; \begin{bmatrix}<br>{\hat X}_B \cdot {\hat X}_A &amp;{\hat Y}_B \cdot {\hat X}_A &amp;{\hat Z}_B \cdot {\hat X}_A \\<br>{\hat X}_B \cdot {\hat Y}_A &amp;{\hat Y}_B \cdot {\hat Y}_A &amp;{\hat Z}_B \cdot {\hat Y}_A \\<br>{\hat X}_B \cdot {\hat Z}_A &amp;{\hat Y}_B \cdot {\hat Z}_A &amp;{\hat Z}_B \cdot {\hat Z}_A<br>\end{bmatrix}<br>\end{align*}<br>$$</p>
+<p>这样的 $\sideset{_B^A}{}R$ 是一个旋转矩阵（行列式为1的正交矩阵）。</p>
+<h3 id="位姿"><a href="#位姿" class="headerlink" title="位姿"></a>位姿</h3><p>$\left \{B \right \}$ 在 $\left \{A \right \}$ 中的位姿可以用 $\left \{B \right \}$ 原点的位置矢量 $\sideset{^A}{ _{BORG}}P$ 和一个旋转矩阵 $\sideset{_B^A}{}R$ 描述</p>
+<p>$$<br>\left \{B \right \} &#x3D; \begin{Bmatrix} \sideset{_B^A}{}R &amp;\sideset{^A}{ _{BORG}}P \end{Bmatrix}<br>$$</p>
+<h2 id="坐标变换"><a href="#坐标变换" class="headerlink" title="坐标变换"></a>坐标变换</h2><p>空间中一个点在不同坐标系中有不同的坐标，坐标之间的变换关系取决于坐标系的相对关系。</p>
+<h3 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h3><p>若 $\left \{A \right \}$ 与 $\left \{B \right \}$ 的姿态相同，对于空间中任意一点，有</p>
+<p>$$<br>\sideset{^A}{}P &#x3D; \sideset{^B}{}P + \sideset{^A}{ _{BORG}}P<br>$$</p>
+<h3 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h3><p>若 $\left \{A \right \}$ 与 $\left \{B \right \}$ 的原点相同，对于空间中任意一点，有</p>
+<p>$$<br>\sideset{^A}{}P &#x3D; \sideset{ _B^A}{}R \sideset{^B}{}P<br>$$</p>
+<h3 id="一般变换"><a href="#一般变换" class="headerlink" title="一般变换"></a>一般变换</h3><p>$\left \{B \right \}$ 的原点在 $\left \{A \right \}$ 中的坐标为 $\sideset{^A}{ _{BORG}}P$ ，同时 $\left \{B \right \}$ 相对 $\left \{A \right \}$ 的旋转矩阵为 $\sideset{_B^A}{}R$ ，则有</p>
+<p>$$<br>\sideset{^A}{}P &#x3D; \sideset{ _B^A}{}R \sideset{^B}{}P + \sideset{^A}{ _{BORG}}P \tag{*}<br>$$</p>
+<p>为了书写的简洁，定义一个 $4 \times 4$ 矩阵</p>
+<p>$$<br>\sideset{_B^A}{}T &#x3D; \begin{bmatrix}<br>\sideset{ _B^A}{}R &amp;\sideset{^A}{ _{BORG}}P \\<br>0 &amp;1<br>\end{bmatrix}<br>$$</p>
+<p>则(*)可改写为</p>
+<p>$$<br>\begin{bmatrix}<br>\sideset{^A}{}P \\ 1<br>\end{bmatrix} &#x3D; \sideset{_B^A}{}T \begin{bmatrix}<br>\sideset{^B}{}P \\ 1<br>\end{bmatrix}<br>$$</p>
+<p>进一步，用 $\sideset{^A}{}P$ 和 $\sideset{^B}{}P$ 代替 $\begin{bmatrix}\sideset{^A}{}P \\ 1\end{bmatrix}$ 和 $\begin{bmatrix}\sideset{^B}{}P \\ 1\end{bmatrix}$ ，于是(*)化为</p>
+<p>$$<br>\sideset{^A}{}P &#x3D; \sideset{ _B^A}{}T \sideset{^B}{}P<br>$$</p>
+<p>$\sideset{ _B^A}{}T$ 称为 $\left \{B \right \}$ 相对于 $\left \{A \right \}$ 的<strong>齐次变换矩阵</strong>，它能够完整描述一个坐标系的位姿，可以将坐标变换表示成线性变换。</p>
+<h1 id="齐次变换矩阵的应用"><a href="#齐次变换矩阵的应用" class="headerlink" title="齐次变换矩阵的应用"></a>齐次变换矩阵的应用</h1><h2 id="在Minecraft中的应用"><a href="#在Minecraft中的应用" class="headerlink" title="在Minecraft中的应用"></a>在Minecraft中的应用</h2><p>Minecraft JAVA 1.19.4 中加入了<a target="_blank" rel="noopener" href="https://zh.minecraft.wiki/w/%E5%B1%95%E7%A4%BA%E5%AE%9E%E4%BD%93">展示实体</a>，包括物品展示实体、方块展示实体和文本展示实体（以下的演示皆用方块展示实体）。展示实体要展示出来，就必须确定实体的位置和姿态（利用transformation标签）。游戏内提供了多种表示位姿的方式，如矩阵形式、轴-角度旋转、四元数旋转以及缩放等，其中矩阵形式指的就是齐次变换矩阵或者它的变体。</p>
+<p>在不添加transformation标签的情况下，方块展示实体为默认状态。例如</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">summon</span> minecraft:block_display ~<span class="number">0</span>.<span class="number">5</span> ~<span class="number">0</span>.<span class="number">5</span> ~<span class="number">0</span>.<span class="number">5</span> &#123;block_state:&#123;Name:<span class="string">&quot;minecraft:diamond_block&quot;</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/photos/%E9%BD%90%E6%AC%A1%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5/1.jpg" class="lazyload placeholder" data-srcset="/photos/%E9%BD%90%E6%AC%A1%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5/1.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="默认状态的方块展示实体"></p>
+<p>我在图中建立了两个参考系 $\left \{1 \right \}$ 和 $\left \{2 \right \}$ 。其中 $\left \{1 \right \}$ 的原点在命令方块的中心，三个轴的指向是与游戏内一致的，x轴指向东，y轴竖直向上，z轴指向南。$\left \{2 \right \}$ 的姿态与 $\left \{1 \right \}$ 完全相同，但 $\left \{2 \right \}$ 的原点相对 $\left \{1 \right \}$ 有一个偏离，这由命令中的’~0.5 ~0.5 ~0.5’决定，写成位置表达式：</p>
+<p>$$<br>\sideset{^1}{_2}P &#x3D; \begin{bmatrix}<br>0.5 \\ 0.5 \\ 0.5<br>\end{bmatrix}<br>$$</p>
+<p>于是我们可以通过简单地设置summon的召唤位置来控制展示实体的位置，但这样难以改变它的姿态。</p>
+<p>为了同时改变展示实体的位置和姿态，可以在命令中添加transformation标签，然后按行优先的方式输入一个齐次变换矩阵。例如</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">summon minecraft:block_display ~<span class="number">0.5</span> ~<span class="number">0.5</span> ~<span class="number">0.5</span> &#123;</span><br><span class="line">block_state:&#123;Name:<span class="string">&quot;minecraft:diamond_block&quot;</span>&#125;,</span><br><span class="line">transformation:</span><br><span class="line">[<span class="number">0.6</span>f,<span class="number">0.8</span>f,<span class="number">0</span>f,<span class="number">1</span>f,</span><br><span class="line">-<span class="number">0.8</span>f,<span class="number">0.6</span>f,<span class="number">0</span>f,<span class="number">1</span>f,</span><br><span class="line"><span class="number">0</span>f,<span class="number">0</span>f,<span class="number">1</span>f,<span class="number">0</span>f,</span><br><span class="line"><span class="number">0</span>f,<span class="number">0</span>f,<span class="number">0</span>f,<span class="number">1</span>f]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/photos/%E9%BD%90%E6%AC%A1%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5/2.jpg" class="lazyload placeholder" data-srcset="/photos/%E9%BD%90%E6%AC%A1%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5/2.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="加了transformation标签的方块展示实体"></p>
+<p>加入transformation标签后，实体固连系就不再与 $\left \{2 \right \}$ 重合，我们将其称为 $\left \{3 \right \}$ 系。$\left \{2 \right \}$ 与 $\left \{3 \right \}$ 的关系体现为指令中的齐次变换矩阵：</p>
+<p>$$<br>\sideset{_3^2}{}T &#x3D; \begin{bmatrix}<br>0.6 &amp;0.8 &amp;0 &amp;1 \\<br>-0.8 &amp;0.6 &amp;0 &amp;1 \\<br>0 &amp;0 &amp;1 &amp;0 \\<br>0 &amp;0 &amp;0 &amp;1<br>\end{bmatrix}<br>$$</p>
+<p>分开来看，</p>
+<p>$$<br>\sideset{_3^2}{}R &#x3D; \begin{bmatrix}<br>0.6 &amp;0.8 &amp;0 \\<br>-0.8 &amp;0.6 &amp;0 \\<br>0 &amp;0 &amp;1<br>\end{bmatrix}<br>\sideset{^2}{_3}P &#x3D; \begin{bmatrix}<br>1 \\ 1 \\ 0<br>\end{bmatrix}<br>$$</p>
+<p>意味着 $\left \{3 \right \}$ 是 $\left \{2 \right \}$ 沿 $\hat{X} _2$ 方向平移1个单位，沿 $\hat{Y} _2$ 方向平移1个单位，绕着 $\hat{Z} _2$ 轴顺时针旋转53.13°的结果。</p>
+<p>另外，指令中填写的矩阵不一定非得是标准的齐次变换矩阵。如果左上角 $3 \times 3$ 旋转矩阵部分的行列式不为1，会产生缩放效果，行列式小于0，会出现内外翻转现象（ $\left \{3 \right \}$ 变成了左手系）。如果矩阵(4,4)的位置不是1，则游戏会自动对矩阵进行整体缩放，使得 $T_{4,4}&#x3D;1$ 。</p>
 
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="">
+              线性代数
+            </a>
+          
+            <a href="/tags/Minecraft/" class="">
+              Minecraft\
+            </a>
+          
+        </div>
         
       </div>
       
@@ -677,7 +760,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/about/index.html" target="_blank" title="关于我">http://GreenZhu233.github.io/pro/about/index.html</a>
+    <a href="/2024/01/01/qi-ci-bian-huan-ju-zhen/" target="_blank" title="齐次变换矩阵">http://GreenZhu233.github.io/pro/2024/01/01/qi-ci-bian-huan-ju-zhen/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -696,6 +779,23 @@
 
 
 
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/photos/jiaosuduzhangliang.png" class="lazyload placeholder" data-srcset="/photos/jiaosuduzhangliang.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2023/12/02/xue-xi-bi-ji-jiao-su-du-zhang-liang/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">学习笔记：角速度张量</div>
+      </div>
+      <!-- <div class="content">
+        序言角速度张量这个概念，在理论力学和机器人学概论课上都出现过，但两门课程上用了不同的推导方式，并得到了两个不同的结果，这
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -797,53 +897,29 @@
   <div class="layout_sticky">    
     
       
-        
-    <section class="widget side_category">
-      
+<section class="widget side_toc">
+  
   <header>
     
-      <a style="color: " href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
     
   </header>
 
 
-      <div class='content'>
-        <ul class="entry navigation">
-          
-            <li><a class="flat-box"
-              title="/categories/%E5%8A%9B%E5%AD%A6/" href="/categories/%E5%8A%9B%E5%AD%A6/"
-              id="categoriesE58A9BE5ADA6"
-              ><div class='name'>力学</div><div class='badge'>(1)</div></a></li>
-          
-            <li><a class="flat-box"
-              title="/categories/%E6%95%B0%E5%AD%A6/" href="/categories/%E6%95%B0%E5%AD%A6/"
-              id="categoriesE695B0E5ADA6"
-              ><div class='name'>数学</div><div class='badge'>(2)</div></a></li>
-          
-        </ul>
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%BD%90%E6%AC%A1%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5"><span class="toc-text">什么是齐次变换矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0"><span class="toc-text">空间描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%BD%AE"><span class="toc-text">位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A7%BF%E6%80%81"><span class="toc-text">姿态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E5%A7%BF"><span class="toc-text">位姿</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-text">坐标变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E7%A7%BB"><span class="toc-text">平移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-text">旋转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%8F%98%E6%8D%A2"><span class="toc-text">一般变换</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BD%90%E6%AC%A1%E5%8F%98%E6%8D%A2%E7%9F%A9%E9%98%B5%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">齐次变换矩阵的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8Minecraft%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-text">在Minecraft中的应用</span></a></li></ol></li></ol> -->
+        <div class="toc"></div>
       </div>
-    </section>
-  
-  
-      
-      
-        
-<section class="widget side_tagcloud">
-    
-  <header>
-    
-      <a style="color: " href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-    <a href="/tags/Minecraft/" style="font-size: 14px; color: #999">Minecraft\</a> <a href="/tags/%E5%85%AC%E5%BC%8F/" style="font-size: 14px; color: #999">公式</a> <a href="/tags/%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">定理</a> <a href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AD%A6/" style="font-size: 14px; color: #999">机器人学</a> <a href="/tags/%E7%90%86%E8%AE%BA%E5%8A%9B%E5%AD%A6/" style="font-size: 14px; color: #999">理论力学</a> <a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" style="font-size: 24px; color: #555">线性代数</a> <a href="/tags/%E8%AF%81%E6%98%8E/" style="font-size: 14px; color: #999">证明</a>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -927,134 +1003,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">2024年01月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">2023年12月</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">2023年11月</span><span class="card-archive-list-count">1</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>3 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2023/11/26'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>4.4k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Mon Jan 01 2024 14:47:59 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2024-01-01 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2024-01-01 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -1136,7 +1084,7 @@
 			clearInterval(this.time);
 		},
 		mounted() {
-			let prop = 'greenzhu.png' || '';
+			let prop = '' || '';
 			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
 			if (isImg) {
 				let img = prop.split(',');
@@ -1182,6 +1130,59 @@
 		height: 100%;
 	}
 </style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 
